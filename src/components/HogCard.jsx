@@ -35,7 +35,7 @@ export default function HogCard({ hogs }) {
   };
 
   const triggerHideButton = (e, hogName) => {
-    e.stopPropogation();
+    e.stopPropagation();
     hideHog(hogName);
   };
 
@@ -64,7 +64,7 @@ export default function HogCard({ hogs }) {
         initiateGreasedFilter={initiateGreasedFilter}
       />
 
-      <select class="ui dropdown" onChange={onSortChange}>
+      <select className="ui dropdown" onChange={onSortChange}>
         <option value="">Remove Sort</option>
         <option value="name">Sort By Name</option>
         <option value="weight">Sort By Weight</option>
