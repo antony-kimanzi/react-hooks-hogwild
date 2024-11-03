@@ -150,3 +150,7 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.filter-button {
+  margin: 50px;
+}
