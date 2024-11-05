@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import FilterButton from "./FilterButton";
 import AddHogForm from "./AddCard";
+import "../index.css";
 
 export default function HogCard({ hogs }) {
   const [hogList, setHogList] = useState(hogs)
@@ -10,9 +11,11 @@ export default function HogCard({ hogs }) {
   const [sortHogBy, setSortHogBy] = useState("");
   const [hiddenHogs, setHiddenHogs] = useState([]); // Track hidden hogs by name
 
+  // function to set the new state of the hogs array
   const onAddHog = (newHog) => {
     setHogList((prevHogs) => [...prevHogs, newHog]);
   };
+
 
   const displayHogDetails = (hog) => {
     if (selectedHog && selectedHog.name === hog.name) {
@@ -58,7 +61,7 @@ export default function HogCard({ hogs }) {
   }
 
   return (
-    <div className="ui-cards ui grid container">
+    <div className="ui two cards">
       <FilterButton
         showGreasedHog={showGreasedHog}
         initiateGreasedFilter={initiateGreasedFilter}
@@ -77,10 +80,10 @@ export default function HogCard({ hogs }) {
         return (
           <div
             key={hog.name}
-            className="card ui eight wide column"
+            className="card"
             onClick={() => displayHogDetails(hog)}
           >
-            <div className="image">
+            <div className="ui medium centered rounded image">
               <img src={hog.image} alt={`${hog.name} pic`} />
             </div>
             <div className="content">

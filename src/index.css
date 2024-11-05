@@ -5,8 +5,9 @@ body {
 }
 
 .App {
-  margin: 0% 5% 0% 5%;
+  padding: 0% 15% 0% 15%;
   text-align: center;
+  background-color: rgb(173, 255, 255);
 }
 
 .TwirlyPig {
@@ -153,4 +154,19 @@ ul {
 
 .filter-button {
   margin: 50px;
+}
+
+.card {
+  margin: 0 30px;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: #313131;
+}
+
+.form {
+  background-color: rgb(190, 190, 190);
+  margin:0 30px 90px;
+  border-radius: 15px;
 }

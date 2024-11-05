@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../index.css"
 
 export default function AddHogForm({ onAddHog }) {
   const [newHog, setNewHog] = useState({
@@ -7,7 +8,7 @@ export default function AddHogForm({ onAddHog }) {
     weight: "",
     greased: false,
     image: "",
-    "highest medal achieved": ""
+    "highest medal achieved": "",
   });
 
   // Handle input changes
@@ -30,7 +31,7 @@ export default function AddHogForm({ onAddHog }) {
       weight: "",
       greased: false,
       image: "",
-      "highest medal achieved": ""
+      "highest medal achieved": "",
     });
   };
 
@@ -38,58 +39,62 @@ export default function AddHogForm({ onAddHog }) {
     <form onSubmit={handleFormSubmit} className="ui form">
       <h3>Add a New Hog</h3>
 
-      <div className="field">
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          value={newHog.name}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-      <div className="field">
-        <label>Specialty</label>
-        <input
-          type="text"
-          name="specialty"
-          value={newHog.specialty}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      <div className="field">
-        <label>Weight</label>
-        <input
-          type="number"
-          name="weight"
-          value={newHog.weight}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-      <div className="field">
-        <label>
+      <div className="fields">
+        <div className="four wide field">
+          <label>Name</label>
           <input
-            type="checkbox"
-            name="greased"
-            checked={newHog.greased}
+            type="text"
+            name="name"
+            value={newHog.name}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div className="eight wide field">
+          <label>Specialty</label>
+          <input
+            type="text"
+            name="specialty"
+            value={newHog.specialty}
             onChange={handleInputChange}
           />
-          Greased
-        </label>
+        </div>
+
+        <div className="two wide field">
+          <label>Weight</label>
+          <input
+            type="number"
+            name="weight"
+            value={newHog.weight}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
       </div>
 
-      <div className="field">
-        <label>Image URL</label>
-        <input
-          type="text"
-          name="image"
-          value={newHog.image}
-          onChange={handleInputChange}
-        />
+      <div className="fields">
+        <div className="field">
+          <label>
+            <input
+              type="checkbox"
+              name="greased"
+              checked={newHog.greased}
+              onChange={handleInputChange}
+            />
+            Greased
+          </label>
+        </div>
+
+        <div className="six wide field">
+          <label>Image URL</label>
+          <input
+            type="text"
+            name="image"
+            value={newHog.image}
+            onChange={handleInputChange}
+          />
+        </div>
       </div>
 
       <div className="field">
@@ -102,7 +107,9 @@ export default function AddHogForm({ onAddHog }) {
         />
       </div>
 
-      <button type="submit" className="ui button primary">Add Hog</button>
+      <button type="submit" className="ui button primary">
+        Add Hog
+      </button>
     </form>
   );
 }
